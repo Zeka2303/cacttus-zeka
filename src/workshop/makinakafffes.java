@@ -1,3 +1,4 @@
+import static javax.swing.text.html.HTML.Tag.S;
 
 void main() {
 
@@ -15,8 +16,10 @@ void main() {
 
         // 3. Menuja e kafese
         IO.println("===== MENUJA E KAFESE =====");
-        IO.println("1. Espresso");
-        IO.println("2. Kafe me qumesht");
+        IO.println("1. Espresso 1.0€");
+        IO.println("2. Mahcciato 1.20€");
+        IO.println("3. Latte 1.50€");
+        IO.println("4. Cappuccino 1.60€");
 
         var coffee = Integer.parseInt(
                 IO.readln("Zgjedhni kafen: ")
@@ -34,7 +37,7 @@ void main() {
             );
 
             var price = switch (espresso) {
-                case 1, 2, 3 -> 0.70;
+                case 1, 2, 3 -> 1.00;
                 default -> 0.0;
             };
 
@@ -45,18 +48,18 @@ void main() {
                 System.out.printf("Cmimi: %.2f €%n", price);
             }
 
-        } else if (coffee == 2) {
+        } else if (coffee >= 2) {
 
             // 5. Kafe me qumesht
-            IO.println("1. Makiato e vogel");
-            IO.println("2. Makiato e madhe");
+            IO.println("Madhesia: S/M/L");
 
-            var size = Integer.parseInt(
-                    IO.readln("Zgjedhni madhesine: ")
-            );
+            var size = IO.readln("Zgjedhni madhesine: ");
+
 
             var price = switch (size) {
-                case 1, 2 -> 1.20;
+                case "S" -> 1.20;
+                case "M" -> 1.50;
+                case "L" -> 1.60;
                 default -> 0.0;
             };
 
@@ -88,9 +91,9 @@ void main() {
 
         // 7. Menuja e cajit
         IO.println("===== MENUJA E CAJIT =====");
-        IO.println("1. Caj mali");
-        IO.println("2. Caj kamomil");
-        IO.println("3. Caj mente");
+        IO.println("1. Caj mali 0.70€");
+        IO.println("2. Caj kamomil 0.70€");
+        IO.println("3. Caj mente 0.70€");
 
         var tea = Integer.parseInt(
                 IO.readln("Zgjedhni cajin: ")
